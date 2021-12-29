@@ -21,10 +21,13 @@ public class BibtexEntryTypeDefinitions {
      * Required fields: author, title, journal, year.
      * Optional fields: volume, number, pages, month, note.
      */
+    /**
+     * adicionei aqui o cite_by e o cite
+     */
     private static final BibEntryType ARTICLE = new BibEntryTypeBuilder()
             .withType(StandardEntryType.Article)
             .withRequiredFields(StandardField.AUTHOR, StandardField.TITLE, StandardField.JOURNAL, StandardField.YEAR)
-            .withImportantFields(StandardField.AFFILIATION,StandardField.AREAOFSTUDY,StandardField.VOLUME, StandardField.NUMBER, StandardField.PAGES, StandardField.MONTH, StandardField.ISSN, StandardField.NOTE)
+            .withImportantFields(StandardField.CITE_BY,StandardField.CITE,StandardField.AFFILIATION,StandardField.AREAOFSTUDY,StandardField.VOLUME, StandardField.NUMBER, StandardField.PAGES, StandardField.MONTH, StandardField.ISSN, StandardField.NOTE)
             .build();
 
     /**
@@ -33,10 +36,13 @@ public class BibtexEntryTypeDefinitions {
      * Required fields: author or editor, title, publisher, year.
      * Optional fields: volume or number, series, address, edition, month, note.
      */
+    /**
+     * adicionei aqui o cite_by
+     */
     private static final BibEntryType BOOK = new BibEntryTypeBuilder()
             .withType(StandardEntryType.Book)
             .withRequiredFields(new OrFields(StandardField.AUTHOR, StandardField.EDITOR), StandardField.TITLE, StandardField.PUBLISHER, StandardField.YEAR)
-            .withImportantFields(StandardField.AFFILIATION,StandardField.AREAOFSTUDY,StandardField.VOLUME, StandardField.NUMBER, StandardField.SERIES, StandardField.ADDRESS, StandardField.EDITION, StandardField.MONTH, StandardField.ISBN, StandardField.NOTE)
+            .withImportantFields(StandardField.CITE_BY,StandardField.AFFILIATION,StandardField.AREAOFSTUDY,StandardField.VOLUME, StandardField.NUMBER, StandardField.SERIES, StandardField.ADDRESS, StandardField.EDITION, StandardField.MONTH, StandardField.ISBN, StandardField.NOTE)
             .build();
 
     /**

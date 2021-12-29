@@ -13,6 +13,9 @@ import org.jabref.gui.fieldeditors.FieldNameLabel;
  *
  * See {@link FieldNameLabel#getDescription(org.jabref.model.entry.field.Field)} for a description of each field.
  */
+/**
+ * adicionei aqui o cite_by,cite
+ */
 public enum StandardField implements Field {
 
     ABSTRACT("abstract"),
@@ -32,6 +35,8 @@ public enum StandardField implements Field {
     BOOKSUBTITLE("booksubtitle", FieldProperty.BOOK_NAME),
     BOOKTITLE("booktitle", FieldProperty.BOOK_NAME),
     BOOKTITLEADDON("booktitleaddon"),
+    CITE("cite"),
+    CITE_BY("cite_by"),
     CHAPTER("chapter"),
     COMMENTATOR("commentator", FieldProperty.PERSON_NAMES),
     COMMENT("comment"),
