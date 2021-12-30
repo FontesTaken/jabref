@@ -14,7 +14,7 @@ class AffiliationTest {
             .withField(StandardField.AFFILIATION, "FCT");
 
     private BibEntry entry2 = new BibEntry()
-            .withField(StandardField.AFFILIATION, "FCT");
+            .withField(StandardField.AFFILIATION, "Tecnico");
 
     @Test
     void affiliationConsideredEqualIfSame() {
@@ -22,23 +22,23 @@ class AffiliationTest {
     }
 
     @Test
-    void SameAffiliationEntries() {
+    void differentAffiliationEntries() {
         String affiliationOfEntry1 = entry1.getFieldValues().iterator().next();
         String affiliationOfEntry2 = entry2.getFieldValues().iterator().next();
-        assertEquals(affiliationOfEntry1, affiliationOfEntry2);
-    }
-
-    @Test
-    void changeInValueOfAffiliationEntries() {
-        entry1.setField(StandardField.AFFILIATION, "Tecnico");
-        String affiliationOfEntry1 = entry1.getField(StandardField.AFFILIATION).orElse("");
-        String affiliationOfEntry2 = entry2.getField(StandardField.AFFILIATION).orElse("");
         assertNotEquals(affiliationOfEntry1, affiliationOfEntry2);
     }
 
     @Test
+    void changeInValueOfAffiliationEntries() {
+        entry2.setField(StandardField.AFFILIATION, "FCT");
+        String affiliationOfEntry1 = entry1.getField(StandardField.AFFILIATION).orElse("");
+        String affiliationOfEntry2 = entry2.getField(StandardField.AFFILIATION).orElse("");
+        assertEquals(affiliationOfEntry2, affiliationOfEntry1);
+    }
+
+    @Test
     void differentEntries() {
-        assertEquals(entry1, entry2);
+        assertNotEquals(entry1, entry2);
     }
 
 
